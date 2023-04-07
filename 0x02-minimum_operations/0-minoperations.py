@@ -1,13 +1,15 @@
-#!/usr/bin/python3
+#!/ usr / bin / python3
 """
-This module defines a function minOperations(n) that calculates the minimum number of operations needed to result in
+This module defines a function min_operations(n) that calculates 
+the minimum number of operations needed to result in
 exactly n H characters in a file.
 """
 
 
-def minOperations(n):
+def min_operations(n):
     """
-    Calculate the fewest number of operations needed to result in exactly n H characters in the file.
+    Calculate the fewest number of operations needed to
+result in exactly n H characters in the file.
 
     Args:
         n (int): Number of H characters
@@ -18,14 +20,14 @@ def minOperations(n):
     if n <= 1:
         # It's impossible to have fewer than 2 H characters
         return 0
-    
-    # Initialize the number of operations and the number of H characters in the file
+
+    # Initialize the number of operations and 
     min_ops = 0
     i = 2
 
     while i <= n:
         if n % i == 0:
-            # If n is a multiple of the current number of H characters, we can copy and paste
+            # If n is a multiple of the current number of H characters,
             min_ops += i
             n //= i
         else:
