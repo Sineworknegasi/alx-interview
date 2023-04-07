@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""0-minoperations module
+"""0 - minoperations module
 
 """
 
