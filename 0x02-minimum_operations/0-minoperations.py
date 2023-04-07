@@ -1,23 +1,20 @@
 #!/usr/bin/python3
-"""0-minoperations module
-"""
-  def minOperations(n):
-        """Calculate the fewest number of operations needed to result in exactly
-        
-        
-        Args:
-        n (int): Number of H characters
-        
-        Returns:
-        int: Minimum number of operations needed
-    """
+"""0-minoperations module"""
+
+
+def minOperations(n):
+        """
+        minOperations
+        Gets fewest # of operations needed to result in exactly n H characters
+        """
+        # all outputs should be at least 2 char: (min, Copy All => Paste)
     if n <= 1:
-        # It's impossible to have fewer than 2 H characters
         return 0
     min_ops = 0
     i = 2
 
     while i <= n:
+    #if n envenly divided by i
         if n % i == 0:
             min_ops += i
             n = n / i
