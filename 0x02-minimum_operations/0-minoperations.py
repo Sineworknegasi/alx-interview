@@ -1,4 +1,4 @@
-#!/ usr / bin / python3
+#!/usr/bin/python3
 """
 This module defines a function min_operations(n) that calculates 
 the minimum number of operations needed to result in
