@@ -1,13 +1,12 @@
-#!/usr/bin/python3
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 """0 - minoperations module
 
 """
 
 
-
 def minOperations(n):
-
     """find the fewest num of operations needed to result in exactly n H char.
 
 
@@ -36,19 +35,16 @@ def minOperations(n):
 
     i = 2
 
-
-
     while i <= n:
 
         if n % i == 0:
 
-            # If n is a multiple of the current number of H characters, 
-            #we can copy and paste
+            # If n is a multiple of the current number of H characters,
+            # we can copy and paste
 
             min_ops += i
 
             n = n / i
-
         else:
 
             # Otherwise, we need to add one more H character to the file
