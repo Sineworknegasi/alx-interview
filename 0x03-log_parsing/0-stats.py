@@ -47,4 +47,3 @@ try:
 
 finally:
     print_msg(codes, file_size)
-
