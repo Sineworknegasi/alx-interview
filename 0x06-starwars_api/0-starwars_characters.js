@@ -1,20 +1,23 @@
 #!/usr/bin/node
 
 const request = require("request");
-
-request(
-  "https://swapi-api.hbtn.io/api/films/" + process.argv[2],
-  function (err, res, body) {
-    if (err) throw err;
-    const actors = JSON.parse(body).characters;
-    exactord(actors, 0);
+const url = `https://swapi-api.alx-tools.com/api/films/${process.argv[2]}/`;
+request(url, async function (error, response, body) {
+  if (error) {
+    return console.log(error);
+  } else {
+    const characters = JSON.parse(body).characters;
+    for (const character in characters) {
+      const res = await new Promise((resolve, reject) => {
+        request(characters[character], (err, res, html) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(JSON.parse(html).name);
+          }
+        });
+      });
+      console.log(res);
+    }
   }
-);
-const exactord = (actors, x) => {
-  if (x === actors.length) return;
-  request(actors[x], function (err, res, body) {
-    if (err) throw err;
-    console.log(JSON.parse(body).name);
-    exactord(actors, x + 1);
-  });
-};
+});
